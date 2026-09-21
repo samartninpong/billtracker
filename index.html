@@ -71,13 +71,15 @@
   .edit:active{opacity:.5;}
   .empty{text-align:center;color:var(--ink-soft);padding:40px 20px;font-size:14px;line-height:1.7;}
   .sheet-bg{position:fixed;inset:0;background:rgba(15,15,17,.4);display:flex;
-    align-items:flex-end;z-index:10;opacity:0;pointer-events:none;transition:opacity .25s ease;}
-  .sheet-bg.open{opacity:1;pointer-events:auto;}
+    align-items:flex-end;z-index:10;opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .25s ease, visibility 0s linear .25s;}
+  .sheet-bg.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease;}
   .sheet{background:var(--paper);width:100%;max-width:520px;margin:0 auto;border-radius:18px 18px 0 0;
     padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;
     transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1);}
   .sheet-bg.open .sheet{transform:translateY(0);}
-  .sheet h3{margin:0 0 14px;font-size:17px;font-weight:600;}
+  .sheet h3{margin:0 0 14px;font-size:17px;font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+  .sheet h3 button{background:none;border:none;color:var(--ink-soft);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1;}
   .field{margin-bottom:12px;}
   .field label{font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:4px;}
   .field input{width:100%;padding:11px;border-radius:9px;border:1px solid var(--line);
@@ -126,6 +128,8 @@
     </div>
     <div class="linkrow">
       <button class="linkbtn" id="btnBackup">สำรอง / กู้คืนข้อมูล</button>
+      <button class="linkbtn" id="btnHistory">ประวัติรอบเดือน</button>
+      <button class="linkbtn" id="btnSyncSettings">ซิงก์ GitHub</button>
     </div>
   </div>
 
@@ -134,7 +138,7 @@
 
 <div class="sheet-bg" id="sheetBg">
   <div class="sheet">
-    <h3 id="sheetTitle">เพิ่มรายการ</h3>
+    <h3 id="sheetTitle">เพิ่มรายการ<button type="button" id="btnSheetClose">×</button></h3>
     <div class="field"><label>ชื่อรายการ</label><input id="fName" placeholder="เช่น ผ่อนแว่นตา"></div>
     <div class="field"><label>กลุ่ม / บัตร</label><input id="fGroup" list="groupList" placeholder="เช่น KTC"></div>
     <div class="chips" id="groupChips"></div>
@@ -156,7 +160,7 @@
 
 <div class="sheet-bg" id="backupBg">
   <div class="sheet">
-    <h3>สำรอง / กู้คืนข้อมูล</h3>
+    <h3>สำรอง / กู้คืนข้อมูล<button type="button" id="btnBackupClose">×</button></h3>
     <p style="font-size:12.5px;color:var(--ink-soft);margin-top:-6px;">คัดลอกข้อความนี้เก็บไว้ (เช่น ส่งให้ตัวเองใน Line) เผื่อข้อมูลหายจะได้วางกู้คืนได้</p>
     <textarea class="backup-ta" id="backupTa"></textarea>
     <div class="actions">
@@ -166,8 +170,32 @@
   </div>
 </div>
 
+<div class="sheet-bg" id="historyBg">
+  <div class="sheet">
+    <h3>ประวัติรอบเดือน<button type="button" id="btnHistoryClose">×</button></h3>
+    <div id="historyList"></div>
+  </div>
+</div>
+
+<div class="sheet-bg" id="syncBg">
+  <div class="sheet">
+    <h3>ซิงก์ข้อมูลขึ้น GitHub<button type="button" id="btnSyncClose">×</button></h3>
+    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:-6px;">กรอกครั้งเดียว ระบบจะจำไว้ในเครื่องนี้</p>
+    <div class="field"><label>GitHub username</label><input id="fGhOwner" placeholder="เช่น somchai"></div>
+    <div class="field"><label>ชื่อ repository</label><input id="fGhRepo" placeholder="เช่น bill-tracker"></div>
+    <div class="field"><label>Personal Access Token</label><input id="fGhToken" type="password" placeholder="github_pat_..."></div>
+    <div class="actions">
+      <button class="btn btn-save" id="btnDoSync">บันทึกและซิงก์เดี๋ยวนี้</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const KEY='passbook_items_v1';
+const HKEY='passbook_history_v1';
+const SKEY='gh_sync_cfg_v1';
+let history = JSON.parse(localStorage.getItem(HKEY) || '[]');
+function saveHistory(){ localStorage.setItem(HKEY, JSON.stringify(history)); }
 let items = JSON.parse(localStorage.getItem(KEY) || '[]');
 let editId = null;
 try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist(); }catch(e){}
@@ -258,6 +286,24 @@ document.getElementById('btnBackup').onclick = ()=>{
   document.getElementById('backupBg').classList.add('open');
 };
 document.getElementById('backupBg').onclick = e=>{ if(e.target.id==='backupBg') document.getElementById('backupBg').classList.remove('open'); };
+document.getElementById('btnHistory').onclick = ()=>{
+  const list = document.getElementById('historyList');
+  if(history.length===0){
+    list.innerHTML = '<div class="empty" style="padding:12px 0;">ยังไม่มีประวัติ<br>พอกด "ปิดรอบเดือนนี้" ครั้งแรก ระบบจะเริ่มเก็บให้อัตโนมัติ</div>';
+  } else {
+    list.innerHTML = history.slice().reverse().map(h=>{
+      const paid = h.items.filter(i=>i.paid).length;
+      return `<div class="row" style="padding:12px 2px;">
+        <div class="rowmain">
+          <div class="name">${h.label}</div>
+          <div class="note">จ่ายแล้ว ${paid}/${h.items.length} รายการ</div>
+        </div>
+        <div class="amount">${baht(h.total)}</div>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('historyBg').classList.add('open');
+};
 document.getElementById('btnCopyBackup').onclick = async ()=>{
   const ta = document.getElementById('backupTa');
   ta.select();
@@ -275,6 +321,47 @@ document.getElementById('btnRestoreBackup').onclick = ()=>{
   }catch(e){ toast('ข้อความไม่ถูกต้อง กู้คืนไม่ได้'); }
 };
 document.getElementById('sheetBg').onclick = e=>{ if(e.target.id==='sheetBg') closeSheet(); };
+document.getElementById('btnSheetClose').onclick = closeSheet;
+document.getElementById('btnBackupClose').onclick = ()=>document.getElementById('backupBg').classList.remove('open');
+document.getElementById('btnHistoryClose').onclick = ()=>document.getElementById('historyBg').classList.remove('open');
+document.getElementById('btnSyncClose').onclick = ()=>document.getElementById('syncBg').classList.remove('open');
+document.getElementById('syncBg').onclick = e=>{ if(e.target.id==='syncBg') document.getElementById('syncBg').classList.remove('open'); };
+document.getElementById('btnSyncSettings').onclick = ()=>{
+  const cfg = JSON.parse(localStorage.getItem(SKEY)||'null') || {};
+  document.getElementById('fGhOwner').value = cfg.owner||'';
+  document.getElementById('fGhRepo').value = cfg.repo||'';
+  document.getElementById('fGhToken').value = cfg.token||'';
+  document.getElementById('syncBg').classList.add('open');
+};
+document.getElementById('btnDoSync').onclick = async ()=>{
+  const cfg = {
+    owner: document.getElementById('fGhOwner').value.trim(),
+    repo: document.getElementById('fGhRepo').value.trim(),
+    token: document.getElementById('fGhToken').value.trim(),
+  };
+  if(!cfg.owner || !cfg.repo || !cfg.token){ toast('กรอกให้ครบทั้ง 3 ช่องก่อนนะครับ'); return; }
+  localStorage.setItem(SKEY, JSON.stringify(cfg));
+  const btn = document.getElementById('btnDoSync');
+  btn.textContent = 'กำลังซิงก์...'; btn.disabled = true;
+  try{
+    const api = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/data.json`;
+    let sha = null;
+    const getRes = await fetch(api, { headers:{ Authorization:`Bearer ${cfg.token}`, Accept:'application/vnd.github+json' } });
+    if(getRes.status===200){ const j = await getRes.json(); sha = j.sha; }
+    else if(getRes.status!==404){ throw new Error('อ่านไฟล์เดิมไม่ได้ (HTTP '+getRes.status+')'); }
+    const payload = { items, history };
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+    const body = { message:'sync bill data '+new Date().toISOString(), content };
+    if(sha) body.sha = sha;
+    const putRes = await fetch(api, { method:'PUT', headers:{ Authorization:`Bearer ${cfg.token}`, Accept:'application/vnd.github+json', 'Content-Type':'application/json' }, body: JSON.stringify(body) });
+    if(!putRes.ok){ const err = await putRes.json().catch(()=>({})); throw new Error(err.message || ('HTTP '+putRes.status)); }
+    toast('ซิงก์ขึ้น GitHub เรียบร้อย ✅');
+    document.getElementById('syncBg').classList.remove('open');
+  }catch(e){
+    toast('ซิงก์ไม่สำเร็จ: '+e.message);
+  }
+  btn.textContent = 'บันทึกและซิงก์เดี๋ยวนี้'; btn.disabled = false;
+};
 
 document.getElementById('btnSave').onclick = ()=>{
   const name = document.getElementById('fName').value.trim();
@@ -313,6 +400,13 @@ document.getElementById('btnClose').onclick = ()=>{
     ? `ยังมี ${unpaidCount} รายการที่ยังไม่ได้จ่าย จะปิดรอบเดือนนี้เลยไหม? (รายการที่จ่ายแล้วจะรีเซ็ตให้เดือนหน้า)`
     : 'ปิดรอบเดือนนี้ และรีเซ็ตให้พร้อมสำหรับเดือนหน้าเลยไหม?';
   if(!confirm(msg)) return;
+  history.push({
+    label: document.getElementById('monthLabel').textContent,
+    total: items.reduce((s,i)=>s+Number(i.amount||0),0),
+    items: items.map(i=>({name:i.name, group:i.group, amount:i.amount, paid:i.paid}))
+  });
+  if(history.length>24) history = history.slice(-24);
+  saveHistory();
   const finished = [];
   items = items.filter(i=>{
     if(!i.paid) return true;
