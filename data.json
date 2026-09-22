@@ -1,15 +1,4 @@
 {
-  "items": [
-    {
-      "id": "i1789875109405",
-      "paid": false,
-      "name": "ทดสอบ",
-      "group": "มือถือ",
-      "amount": 5000,
-      "current": null,
-      "total": null,
-      "note": ""
-    }
-  ],
+  "items": [],
   "history": []
 }
