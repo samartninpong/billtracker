@@ -3,7 +3,7 @@ const fs = require('fs');
 const now0 = new Date();
 const tomorrow = new Date(now0);
 tomorrow.setDate(now0.getDate() + 1);
-if (tomorrow.getDate() !== 1) {
+if (process.env.GITHUB_EVENT_NAME === 'schedule' && tomorrow.getDate() !== 1) {
   console.log('วันนี้ยังไม่ใช่วันสุดท้ายของเดือน ข้ามไปก่อน');
   process.exit(0);
 }
