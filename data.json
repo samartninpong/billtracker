@@ -36,7 +36,7 @@
       "name": "AEON One Loan",
       "group": "บัตร AEON",
       "amount": 2651,
-      "current": 2,
+      "current": 3,
       "total": 60,
       "note": "สินเชื่อ"
     },
@@ -46,7 +46,7 @@
       "name": "SCB CardX",
       "group": "บัตร",
       "amount": 1170,
-      "current": 17,
+      "current": 18,
       "total": 36,
       "note": "ผ่อน iphone"
     },
@@ -56,7 +56,7 @@
       "name": "บัตรกดเงินสด TTB",
       "group": "บัตร",
       "amount": 3968,
-      "current": 3,
+      "current": 4,
       "total": 60,
       "note": "ttb flash"
     },
@@ -66,7 +66,7 @@
       "name": "กดเงินสด 10k",
       "group": "บัตร UOB One",
       "amount": 600,
-      "current": 4,
+      "current": 5,
       "total": 36,
       "note": ""
     },
@@ -76,7 +76,7 @@
       "name": "UOB Express",
       "group": "บัตร",
       "amount": 1300,
-      "current": 17,
+      "current": 18,
       "total": 60,
       "note": "จ่ายตอนข้ามเดินเท่านั้น"
     },
@@ -85,10 +85,10 @@
       "paid": false,
       "name": "Shopee Pay Later",
       "group": "Shopee",
-      "amount": 2000,
+      "amount": 2069.99,
       "current": null,
       "total": null,
-      "note": "ยอดประมาณการ"
+      "note": ""
     },
     {
       "id": "i1790051251174",
@@ -96,7 +96,7 @@
       "name": "Shopee Easy Cash",
       "group": "Shopee",
       "amount": 400,
-      "current": 5,
+      "current": 6,
       "total": 24,
       "note": "ที่ยืมกิ๊กจิ"
     },
@@ -146,7 +146,7 @@
       "name": "ผ่อนน้ำหอม Burberry",
       "group": "บัตร KTC",
       "amount": 449.14,
-      "current": 9,
+      "current": 10,
       "total": 10,
       "note": "ยอดเต็ม: ฿4,491.46"
     },
@@ -156,7 +156,7 @@
       "name": "ผ่อนแว่นตา",
       "group": "บัตร KTC",
       "amount": 288.9,
-      "current": 8,
+      "current": 9,
       "total": 10,
       "note": "ยอดเต็ม: ฿2,889.06 - gigkik"
     },
@@ -166,7 +166,7 @@
       "name": "ผ่อนบัตร King Gnu",
       "group": "บัตร KTC",
       "amount": 551.71,
-      "current": 7,
+      "current": 8,
       "total": 10,
       "note": "ยอดเต็ม: ฿5,517.13 - gigkik"
     },
@@ -176,7 +176,7 @@
       "name": "MO-MO Paradise",
       "group": "บัตร KTC",
       "amount": 212.29,
-      "current": 2,
+      "current": 3,
       "total": 10,
       "note": "ยอดเต็ม: ฿2,122.97"
     },
@@ -186,7 +186,7 @@
       "name": "Neo Suki",
       "group": "บัตร KTC",
       "amount": 179.56,
-      "current": 0,
+      "current": 1,
       "total": 6,
       "note": "ยอดเต็ม: ฿1,077.26"
     },
@@ -274,12 +274,347 @@
       "id": "i1790060218645",
       "paid": false,
       "name": "Spotify",
-      "group": "บิล",
+      "group": "บัตร UOB One",
       "amount": 149,
       "current": null,
       "total": null,
-      "note": "ตัด True Money"
+      "note": ""
+    },
+    {
+      "id": "i1790818123684",
+      "paid": false,
+      "name": "กดเงินสด (จ่ายคนละครึ่ง)",
+      "group": "SCB UP",
+      "amount": 955,
+      "current": 28,
+      "total": 47,
+      "note": "1910/2 = ฿955"
+    },
+    {
+      "id": "i1790818196473",
+      "paid": false,
+      "name": "กเเงินสด ฿5700 - กิ๊กจิ",
+      "group": "SCB UP",
+      "amount": 180,
+      "current": 15,
+      "total": 47,
+      "note": "ของกิ๊กจิ"
+    },
+    {
+      "id": "i1790818404209",
+      "paid": false,
+      "name": "กดเงินสด ฿5000",
+      "group": "SCB UP",
+      "amount": 158,
+      "current": 8,
+      "total": 47,
+      "note": "ของกิ๊กจิ"
+    },
+    {
+      "id": "i1790818452201",
+      "paid": false,
+      "name": "กดเงินสด ฿5000",
+      "group": "SCB UP",
+      "amount": 158,
+      "current": 11,
+      "total": 47,
+      "note": "ของกิ๊กจิ"
+    },
+    {
+      "id": "i1790818487579",
+      "paid": false,
+      "name": "กดเงินสด ฿6000",
+      "group": "SCB UP",
+      "amount": 189,
+      "current": 6,
+      "total": 48,
+      "note": "ของกิ๊กจิ"
+    },
+    {
+      "id": "i1790818530858",
+      "paid": false,
+      "name": "กดเงินสด ฿6000",
+      "group": "SCB UP",
+      "amount": 189,
+      "current": 2,
+      "total": 48,
+      "note": "ของกิ๊กจิ"
+    },
+    {
+      "id": "i1790818600284",
+      "paid": false,
+      "name": "กดเงินสด",
+      "group": "บัตร KTC Proud",
+      "amount": 2500,
+      "current": null,
+      "total": null,
+      "note": "ของกิ๊กจิ"
+    },
+    {
+      "id": "i1790819611822",
+      "paid": false,
+      "name": "ผ่อนค่าเครื่องแป้งกับพี่อุ๊",
+      "group": "บัตร UOB One",
+      "amount": 2342.21,
+      "current": 2,
+      "total": 6,
+      "note": "ยอดเต็ม: ฿ 14,053.3 (2คนรวมกัน / ยอดแต่ละคน ฿7242)"
+    },
+    {
+      "id": "i1790824784484",
+      "paid": false,
+      "name": "ผ่อน steam",
+      "group": "บัตร KTC",
+      "amount": 149.57,
+      "current": 1,
+      "total": 10,
+      "note": "ยอดเต็ม: ฿1495.81"
+    },
+    {
+      "id": "i1790824851903",
+      "paid": false,
+      "name": "ผ่อนซื้อของ 7-11",
+      "group": "บัตร KTC",
+      "amount": 143.8,
+      "current": 1,
+      "total": 10,
+      "note": "ยอดเต็ม: ฿1438.08"
     }
   ],
-  "history": []
+  "history": [
+    {
+      "label": "ตุลาคม 2569",
+      "total": 39204.03,
+      "items": [
+        {
+          "name": "AIS",
+          "group": "อินเตอร์เน็ต",
+          "amount": 212.93,
+          "paid": true
+        },
+        {
+          "name": "AIS Fiber",
+          "group": "อินเตอร์เน็ต",
+          "amount": 533.93,
+          "paid": true
+        },
+        {
+          "name": "ค่าเดินทาง",
+          "group": "บัตร UOB One",
+          "amount": 2000,
+          "paid": true
+        },
+        {
+          "name": "AEON One Loan",
+          "group": "บัตร AEON",
+          "amount": 2651,
+          "paid": true
+        },
+        {
+          "name": "SCB CardX",
+          "group": "บัตร",
+          "amount": 1170,
+          "paid": true
+        },
+        {
+          "name": "บัตรกดเงินสด TTB",
+          "group": "บัตร",
+          "amount": 3968,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด 10k",
+          "group": "บัตร UOB One",
+          "amount": 600,
+          "paid": true
+        },
+        {
+          "name": "UOB Express",
+          "group": "บัตร",
+          "amount": 1300,
+          "paid": true
+        },
+        {
+          "name": "Shopee Pay Later",
+          "group": "Shopee",
+          "amount": 2069.99,
+          "paid": true
+        },
+        {
+          "name": "Shopee Easy Cash",
+          "group": "Shopee",
+          "amount": 400,
+          "paid": true
+        },
+        {
+          "name": "ค่าเครื่องซักผ้า",
+          "group": "บิล",
+          "amount": 400,
+          "paid": true
+        },
+        {
+          "name": "ค่าบัตร The Weekend",
+          "group": "บิล",
+          "amount": 406,
+          "paid": true
+        },
+        {
+          "name": "ให้ที่บ้าน",
+          "group": "Home",
+          "amount": 5000,
+          "paid": true
+        },
+        {
+          "name": "AEON M Gen Visa",
+          "group": "บัตร AEON",
+          "amount": 35,
+          "paid": true
+        },
+        {
+          "name": "ผ่อนน้ำหอม Burberry",
+          "group": "บัตร KTC",
+          "amount": 449.14,
+          "paid": true
+        },
+        {
+          "name": "ผ่อนแว่นตา",
+          "group": "บัตร KTC",
+          "amount": 288.9,
+          "paid": true
+        },
+        {
+          "name": "ผ่อนบัตร King Gnu",
+          "group": "บัตร KTC",
+          "amount": 551.71,
+          "paid": true
+        },
+        {
+          "name": "MO-MO Paradise",
+          "group": "บัตร KTC",
+          "amount": 212.29,
+          "paid": true
+        },
+        {
+          "name": "Neo Suki",
+          "group": "บัตร KTC",
+          "amount": 179.56,
+          "paid": true
+        },
+        {
+          "name": "ประกันอุบัติเหตุ+ชีวิต Chubb",
+          "group": "บัตร KTC",
+          "amount": 647,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด",
+          "group": "บัตร KTC",
+          "amount": 3000,
+          "paid": true
+        },
+        {
+          "name": "น้ำหอม Savage",
+          "group": "บัตร AEON",
+          "amount": 1000,
+          "paid": true
+        },
+        {
+          "name": "ถุงหอม 2 อัน",
+          "group": "บัตร AEON",
+          "amount": 936,
+          "paid": true
+        },
+        {
+          "name": "ถุงหอม Nectarine Blossom",
+          "group": "บัตร AEON",
+          "amount": 810,
+          "paid": true
+        },
+        {
+          "name": "ค่าไฟฟ้า",
+          "group": "บิล",
+          "amount": 2500,
+          "paid": true
+        },
+        {
+          "name": "ค่าบัตร Major Cineplex",
+          "group": "บัตร UOB One",
+          "amount": 350,
+          "paid": true
+        },
+        {
+          "name": "Netflix",
+          "group": "บัตร UOB One",
+          "amount": 419,
+          "paid": true
+        },
+        {
+          "name": "Spotify",
+          "group": "บัตร UOB One",
+          "amount": 149,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด (จ่ายคนละครึ่ง)",
+          "group": "SCB UP",
+          "amount": 955,
+          "paid": true
+        },
+        {
+          "name": "กเเงินสด ฿5700 - กิ๊กจิ",
+          "group": "SCB UP",
+          "amount": 180,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด ฿5000",
+          "group": "SCB UP",
+          "amount": 158,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด ฿5000",
+          "group": "SCB UP",
+          "amount": 158,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด ฿6000",
+          "group": "SCB UP",
+          "amount": 189,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด ฿6000",
+          "group": "SCB UP",
+          "amount": 189,
+          "paid": true
+        },
+        {
+          "name": "กดเงินสด",
+          "group": "บัตร KTC Proud",
+          "amount": 2500,
+          "paid": false
+        },
+        {
+          "name": "ผ่อนค่าเครื่องแป้งกับพี่อุ๊",
+          "group": "บัตร UOB One",
+          "amount": 2342.21,
+          "paid": true
+        },
+        {
+          "name": "ผ่อน steam",
+          "group": "บัตร KTC",
+          "amount": 149.57,
+          "paid": true
+        },
+        {
+          "name": "ผ่อนซื้อของ 7-11",
+          "group": "บัตร KTC",
+          "amount": 143.8,
+          "paid": true
+        }
+      ]
+    }
+  ]
 }
