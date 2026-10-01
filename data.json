@@ -2,7 +2,7 @@
   "items": [
     {
       "id": "i1790045142650",
-      "paid": true,
+      "paid": false,
       "name": "AIS",
       "group": "อินเตอร์เน็ต",
       "amount": 212.93,
@@ -12,7 +12,7 @@
     },
     {
       "id": "i1790045162581",
-      "paid": true,
+      "paid": false,
       "name": "AIS Fiber",
       "group": "อินเตอร์เน็ต",
       "amount": 533.93,
@@ -92,7 +92,7 @@
     },
     {
       "id": "i1790051251174",
-      "paid": true,
+      "paid": false,
       "name": "Shopee Easy Cash",
       "group": "Shopee",
       "amount": 400,
@@ -102,7 +102,7 @@
     },
     {
       "id": "i1790051278673",
-      "paid": true,
+      "paid": false,
       "name": "ค่าเครื่องซักผ้า",
       "group": "บิล",
       "amount": 400,
@@ -112,7 +112,7 @@
     },
     {
       "id": "i1790051304172",
-      "paid": true,
+      "paid": false,
       "name": "ค่าบัตร The Weekend",
       "group": "บิล",
       "amount": 406,
