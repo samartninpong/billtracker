@@ -2,23 +2,283 @@
   "items": [
     {
       "id": "i1790045142650",
-      "paid": false,
+      "paid": true,
       "name": "AIS",
-      "group": "โทรศัพท์",
-      "amount": 212,
+      "group": "อินเตอร์เน็ต",
+      "amount": 212.93,
       "current": null,
       "total": null,
       "note": ""
     },
     {
       "id": "i1790045162581",
-      "paid": false,
+      "paid": true,
       "name": "AIS Fiber",
-      "group": "โทรศัพท์",
-      "amount": 533,
+      "group": "อินเตอร์เน็ต",
+      "amount": 533.93,
       "current": null,
       "total": null,
       "note": ""
+    },
+    {
+      "id": "i1790050895262",
+      "paid": false,
+      "name": "ค่าเดินทาง",
+      "group": "บัตร UOB One",
+      "amount": 2000,
+      "current": null,
+      "total": null,
+      "note": "รวม ARL+MRT(ตัดบัตร UOB One)"
+    },
+    {
+      "id": "i1790050991653",
+      "paid": false,
+      "name": "AEON One Loan",
+      "group": "บัตร AEON",
+      "amount": 2651,
+      "current": 2,
+      "total": 60,
+      "note": "สินเชื่อ"
+    },
+    {
+      "id": "i1790051031469",
+      "paid": false,
+      "name": "SCB CardX",
+      "group": "บัตร",
+      "amount": 1170,
+      "current": 17,
+      "total": 36,
+      "note": "ผ่อน iphone"
+    },
+    {
+      "id": "i1790051072159",
+      "paid": false,
+      "name": "บัตรกดเงินสด TTB",
+      "group": "บัตร",
+      "amount": 3968,
+      "current": 3,
+      "total": 60,
+      "note": "ttb flash"
+    },
+    {
+      "id": "i1790051121180",
+      "paid": false,
+      "name": "กดเงินสด 10k",
+      "group": "บัตร UOB One",
+      "amount": 600,
+      "current": 4,
+      "total": 36,
+      "note": ""
+    },
+    {
+      "id": "i1790051170113",
+      "paid": false,
+      "name": "UOB Express",
+      "group": "บัตร",
+      "amount": 1300,
+      "current": 17,
+      "total": 60,
+      "note": "จ่ายตอนข้ามเดินเท่านั้น"
+    },
+    {
+      "id": "i1790051221850",
+      "paid": false,
+      "name": "Shopee Pay Later",
+      "group": "Shopee",
+      "amount": 2000,
+      "current": null,
+      "total": null,
+      "note": "ยอดประมาณการ"
+    },
+    {
+      "id": "i1790051251174",
+      "paid": true,
+      "name": "Shopee Easy Cash",
+      "group": "Shopee",
+      "amount": 400,
+      "current": 5,
+      "total": 24,
+      "note": "ที่ยืมกิ๊กจิ"
+    },
+    {
+      "id": "i1790051278673",
+      "paid": true,
+      "name": "ค่าเครื่องซักผ้า",
+      "group": "บิล",
+      "amount": 400,
+      "current": null,
+      "total": null,
+      "note": ""
+    },
+    {
+      "id": "i1790051304172",
+      "paid": true,
+      "name": "ค่าบัตร The Weekend",
+      "group": "บิล",
+      "amount": 406,
+      "current": null,
+      "total": null,
+      "note": ""
+    },
+    {
+      "id": "i1790051329223",
+      "paid": false,
+      "name": "ให้ที่บ้าน",
+      "group": "Home",
+      "amount": 5000,
+      "current": null,
+      "total": null,
+      "note": ""
+    },
+    {
+      "id": "i1790051372669",
+      "paid": false,
+      "name": "AEON M Gen Visa",
+      "group": "บัตร AEON",
+      "amount": 35,
+      "current": null,
+      "total": null,
+      "note": "Apple Bill iCloud+"
+    },
+    {
+      "id": "i1790051443411",
+      "paid": false,
+      "name": "ผ่อนน้ำหอม Burberry",
+      "group": "บัตร KTC",
+      "amount": 449.14,
+      "current": 9,
+      "total": 10,
+      "note": "ยอดเต็ม: ฿4,491.46"
+    },
+    {
+      "id": "i1790051503398",
+      "paid": false,
+      "name": "ผ่อนแว่นตา",
+      "group": "บัตร KTC",
+      "amount": 288.9,
+      "current": 8,
+      "total": 10,
+      "note": "ยอดเต็ม: ฿2,889.06 - gigkik"
+    },
+    {
+      "id": "i1790051607558",
+      "paid": false,
+      "name": "ผ่อนบัตร King Gnu",
+      "group": "บัตร KTC",
+      "amount": 551.71,
+      "current": 7,
+      "total": 10,
+      "note": "ยอดเต็ม: ฿5,517.13 - gigkik"
+    },
+    {
+      "id": "i1790051700343",
+      "paid": false,
+      "name": "MO-MO Paradise",
+      "group": "บัตร KTC",
+      "amount": 212.29,
+      "current": 2,
+      "total": 10,
+      "note": "ยอดเต็ม: ฿2,122.97"
+    },
+    {
+      "id": "i1790051756408",
+      "paid": false,
+      "name": "Neo Suki",
+      "group": "บัตร KTC",
+      "amount": 179.56,
+      "current": 0,
+      "total": 6,
+      "note": "ยอดเต็ม: ฿1,077.26"
+    },
+    {
+      "id": "i1790051791619",
+      "paid": false,
+      "name": "ประกันอุบัติเหตุ+ชีวิต Chubb",
+      "group": "บัตร KTC",
+      "amount": 647,
+      "current": null,
+      "total": null,
+      "note": ""
+    },
+    {
+      "id": "i1790051839683",
+      "paid": false,
+      "name": "กดเงินสด",
+      "group": "บัตร KTC",
+      "amount": 3000,
+      "current": null,
+      "total": null,
+      "note": "รอทำเป็นยอดผ่อนชำระ"
+    },
+    {
+      "id": "i1790052005574",
+      "paid": false,
+      "name": "น้ำหอม Savage",
+      "group": "บัตร AEON",
+      "amount": 1000,
+      "current": null,
+      "total": null,
+      "note": "ยังไม่ชัวยอดคงเหลือ- บัตร JCB"
+    },
+    {
+      "id": "i1790052041665",
+      "paid": false,
+      "name": "ถุงหอม 2 อัน",
+      "group": "บัตร AEON",
+      "amount": 936,
+      "current": null,
+      "total": null,
+      "note": "บัตร JCB"
+    },
+    {
+      "id": "i1790052058497",
+      "paid": false,
+      "name": "ถุงหอม Nectarine Blossom",
+      "group": "บัตร AEON",
+      "amount": 810,
+      "current": null,
+      "total": null,
+      "note": "บัตร JCB"
+    },
+    {
+      "id": "i1790052103434",
+      "paid": false,
+      "name": "ค่าไฟฟ้า",
+      "group": "บิล",
+      "amount": 2500,
+      "current": null,
+      "total": null,
+      "note": "+- ไม่เกิน 500"
+    },
+    {
+      "id": "i1790059833667",
+      "paid": false,
+      "name": "ค่าบัตร Major Cineplex",
+      "group": "บัตร UOB One",
+      "amount": 350,
+      "current": null,
+      "total": null,
+      "note": "ตัดบัตร UOB One"
+    },
+    {
+      "id": "i1790060075155",
+      "paid": false,
+      "name": "Netflix",
+      "group": "บัตร UOB One",
+      "amount": 419,
+      "current": null,
+      "total": null,
+      "note": "ตัดบัตร UOB One"
+    },
+    {
+      "id": "i1790060218645",
+      "paid": false,
+      "name": "Spotify",
+      "group": "บิล",
+      "amount": 149,
+      "current": null,
+      "total": null,
+      "note": "ตัด True Money"
     }
   ],
   "history": []
