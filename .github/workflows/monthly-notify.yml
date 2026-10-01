@@ -2,7 +2,7 @@ name: Monthly Bill Notify
 
 on:
   schedule:
-    - cron: '0 1 1 * *'
+    - cron: '0 1 28-31 * *'
   workflow_dispatch:
 
 jobs:
